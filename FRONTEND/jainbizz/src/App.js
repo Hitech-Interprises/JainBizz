@@ -17,6 +17,7 @@ import UpdateService from "./Pages/Service/UpdateService";
 import Forgot from "./Components/Forgot";
 import Dashboard1 from "./Components/Dashboard/Dashboard";
 import MainDashboard from "./Components/Dashboard/MainDashboard";
+import Offer from "./Pages/User/Offer";
 
 
 function App() {
@@ -37,10 +38,9 @@ function App() {
         <Route path="/ViewSerivces" element={<ViewSerivces />} />
         <Route path="/UpdateService" element={<UpdateService />} />
         <Route path="/Forgot" element={<Forgot />} />
-
-     
         <Route path="/Dashboard1" element={<Dashboard1 />} />
         <Route path="/MainDashboard" element={<MainDashboard />} />
+        <Route path="/Offer" element={<Offer />} />
         </Routes>
     </BrowserRouter>  
   );
