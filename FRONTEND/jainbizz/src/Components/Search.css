@@ -1,0 +1,37 @@
+.search-sec {
+    background: #eab308;
+    padding: 1rem 3rem;
+}
+
+.container{
+    border-radius: 5;
+}
+
+.search-slt {
+    display: block;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #55595c;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    height: calc(3rem + 2px) !important;
+    border-radius: 3;
+    
+}
+
+.wrn-btn {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: #fff;
+    height: calc(3rem + 2px) !important;
+    border-radius: 3;
+    background-color: #6f42c1;
+}
+
+:hover.wrn-btn{
+    background-color: #7c42e8;
+    color: #fff;
+}
