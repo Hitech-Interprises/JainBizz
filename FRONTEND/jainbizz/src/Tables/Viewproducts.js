@@ -52,7 +52,7 @@ const Viewproducts = () => {
     const Categoryname = async (cate_id) => {
         console.log(cate_id, "666666666666666666")
         try {
-            const res = await axios.post("http://127.0.0.1:8000/app/SelectedProduct_Page/", { userid: 'be5a6874-83f4-4c58-9c89-2b0918b3f874     ', cate_id: cate_id });
+            const res = await axios.post("http://127.0.0.1:8000/app/SelectedProduct_Page/", { userid: 'bf986e4e-1d89-42ed-b49d-491ebbbcb4dc', cate_id: cate_id });
             setCategoryNames(res.data)
             console.log(res.data, "+++++++")
         } catch (err) {
