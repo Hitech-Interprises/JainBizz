@@ -305,7 +305,7 @@ class Category_SelectedList(views.APIView):
             if not cate_id:
                 return Response({"detail": "cate_id is required in the request body."}, status=status.HTTP_400_BAD_REQUEST)
             
-            categories = CategoryModels.objects.filter(parent_userid=userid,cate_id=cate_id)
+            categories = CategoryModels.objects.filter(parent_userid=userid,cate_id=cate_id).values('name')
             
             # if cate_id is not None:
             #     categories = categories.filter(cate_id=cate_id)
@@ -313,7 +313,7 @@ class Category_SelectedList(views.APIView):
                 
             serializer = MainCategorySerializers(categories, many=True)
             print(serializer,"================")
-            return Response(serializer.data, status=status.HTTP_200_OK)
+            return Response(categories, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({"detail": "An error occurred while processing the request."}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)             
 
@@ -525,3 +525,67 @@ class Bussiness_OfferingCreate(views.APIView):
         except Exception as e:
             return Response({'msg': 'An error occurred while processing the Bussiness Offering request'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     
+
+
+class Bussiness_ProductCategoryList(views.APIView):
+
+    def post(self, request, format=None):
+        print('jjjjj')
+        try:
+            userid = request.data.get('userid')
+            
+            if not userid:
+                return Response({"detail": "userid is required in the request body."}, status=status.HTTP_400_BAD_REQUEST)
+            
+            categories = AllProducts_db.objects.filter(parent_userid=userid).values('categories')
+            categories_list = list(categories)
+            
+            # serializer = Products_Serializers(instance=categories, many=True)
+            # print(serializer)
+            return Response(categories_list, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({"detail": "An error occurred while processing the request."}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+# class Bussiness_ProductCategoryList(views.APIView):
+#     def post(self, request, format=None):
+#         try:
+#             userid = request.data.get('userid')
+#             parentid = request.data.get('parentid')
+            
+#             if not userid:
+#                 return Response({"detail": "userid is required in the request body."}, status=status.HTTP_400_BAD_REQUEST)
+            
+#             categories = CategoryModels.objects.filter(parent_userid=userid)
+            
+#             if parentid is not None:
+#                 categories = categories.filter(parent_category=parentid)
+#             else:
+#                 categories = categories.filter(parent_category__isnull=True)
+                
+#             serializer = MainCategorySerializers(instance=categories, many=True)
+#             return Response(serializer.data, status=status.HTTP_200_OK)
+#         except Exception as e:
+#             return Response({"detail": "An error occurred while processing the request."}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+
+# class Bussiness_ServiceCategoryList(views.APIView):
+#     def post(self, request, format=None):
+#         try:
+#             userid = request.data.get('userid')
+#             # parentid = request.data.get('parentid')
+            
+#             if not userid:
+#                 return Response({"detail": "userid is required in the request body."}, status=status.HTTP_400_BAD_REQUEST)
+            
+#             categories = CategoryModels.objects.filter(parent_userid=userid)
+            
+#             # if parentid is not None:
+#             #     categories = categories.filter(parent_category=parentid)
+#             # else:
+#             #     categories = categories.filter(parent_category__isnull=True)
+                
+#             serializer = MainCategorySerializers(instance=categories, many=True)
+#             return Response(serializer.data, status=status.HTTP_200_OK)
+#         except Exception as e:
+#             return Response({"detail": "An error occurred while processing the request."}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

@@ -55,20 +55,20 @@ const Product_CURD = () => {
     };
 
 
-    const getCategoryname= async (cate_id) =>{
+    // const getCategoryname= async (cate_id) =>{
 
-      console.log(cate_id,"666666666666666666")
-      try{
+    //   console.log(cate_id,"666666666666666666")
+    //   try{
 
-        const res = await axios.post("http://127.0.0.1:8000/app/SelectedProduct Page/", { userid: 'be5a6874-83f4-4c58-9c89-2b0918b3f874', cate_id:cate_id });
-        setcategory(res.data)
-        console.log(res.data,"+++++++")
+    //     const res = await axios.post("http://127.0.0.1:8000/app/SelectedProduct Page/", { userid: 'be5a6874-83f4-4c58-9c89-2b0918b3f874', cate_id:cate_id });
+    //     setcategory(res.data)
+    //     console.log(res.data,"+++++++")
 
-      }catch (err) {
-          console.log(err);
-        }
+    //   }catch (err) {
+    //       console.log(err);
+    //     }
 
-    }
+    // }
 
 
 
@@ -121,7 +121,7 @@ const Product_CURD = () => {
     data,
     setData,
     getProduct_Delete,
-    getCategoryname
+    // getCategoryname
     // getProduct_View,
     // values, setValues
   }

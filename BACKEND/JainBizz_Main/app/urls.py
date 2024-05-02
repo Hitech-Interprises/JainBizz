@@ -35,6 +35,7 @@ urlpatterns = [
     path('Sevice_Update/', servicedetails_update.as_view()),
     path('Service_View_EditPage/', Servicedetails_View.as_view()),
     path('Create_BussuinessOffering/', Bussiness_OfferingCreate.as_view()),
+    path('Product_CategoryList/', Bussiness_ProductCategoryList.as_view()),
 ]
 
 # Serve media files during development

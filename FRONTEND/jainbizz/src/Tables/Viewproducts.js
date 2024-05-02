@@ -21,7 +21,7 @@ const Viewproducts = () => {
     const [oncancel, setoncancel] = useState(false);
     const [showTermsPopup, setShowTermsPopup] = useState(false);
     const [selectedProductId, setSelectedProductId] = useState(null);
-    const {data, setData,getProduct_Delete ,getCategoryname} = Product_CURD();
+    const {data, setData,getProduct_Delete } = Product_CURD();
     const {getProduct_View} = Product_Mid();
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredData, setFilteredData] = useState([]);
@@ -31,10 +31,9 @@ const Viewproducts = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetchCategoryNames()
         setFilteredData(data);
         // Categoryname(); // Fetch data when component mounts
-    }, [data,filteredData, getCategoryname]);
+    }, [data]);
 
     const handleSearch = () => {
         const lowercaseQuery = searchQuery.toLowerCase();
@@ -47,27 +46,8 @@ const Viewproducts = () => {
             item.price.toLowerCase().includes(lowercaseQuery)
             
         );
-
-        const categoryname = data.filter(item =>item.categories);
-        console.log(categoryname,"ooooooooooooooooooooooooooooooo")
         setFilteredData(filtered);
     }
-
-
-    const fetchCategoryNames = async () => {
-        const categoryIds = filteredData.map(item => item.categories);
-        const categoryNames = await Promise.all(categoryIds.map(id => getCategoryname(id)));
-        const categoriesMap = {};
-        categoryIds.forEach((id, index) => {
-            categoriesMap[id] = categoryNames[index];
-        });
-        setCategoryNames(categoriesMap);
-    };
-    // fetchCategoryNames();
-
-    // useEffect(() => {
-       
-    // }, []);
 
 
     return (
@@ -110,9 +90,6 @@ const Viewproducts = () => {
                                             Products
                                         </th>
                                         <th scope="col" class="px-6 py-3 text-left  text-black text-xs font-extrabold uppercase tracking-wider">
-                                            Category
-                                        </th>
-                                        <th scope="col" class="px-6 py-3 text-left  text-black text-xs font-extrabold uppercase tracking-wider">
                                             Warranty
                                         </th>
                                         <th scope="col" class="px-6 py-3 text-left  text-black text-xs font-extrabold uppercase tracking-wider">
@@ -149,10 +126,6 @@ const Viewproducts = () => {
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap">
                                                 <div class="text-sm text-gray-900">{item.product_name}</div>
-                                            </td>
-
-                                            <td class="px-6 py-4 whitespace-nowrap">
-                                                <div class="text-sm text-gray-600">{item.categories}</div>
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap">
                                                 <div class="text-sm text-gray-600">{item.warranty_information}</div>

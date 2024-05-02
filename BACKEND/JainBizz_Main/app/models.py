@@ -7,7 +7,8 @@ from django.utils import timezone
 
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
-
+import datetime
+import os
 
 
 # Create your models here.
@@ -120,7 +121,11 @@ class CategoryService(models.Model):
     def __str__(self):
         return f"{self.cate_id} - {self.name}"
 
-
+def filepath(request, filename):
+    old_filename = filename
+    timeNow = datetime.datetime.now().strftime('%Y%m%d%H:%M:%S')
+    filename = '%s%s'%(timeNow, old_filename)
+    return os.path.join('images/',filename)
     
 class AllService_db(models.Model):
     service_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False,primary_key=True) 
@@ -129,7 +134,7 @@ class AllService_db(models.Model):
     service_type= models.CharField(max_length=80,blank= True, null= True)
     target_audience= models.CharField(max_length=80,blank= True, null= True)
     keywords_tags = models.CharField(max_length=80,blank= True, null= True)
-    images = models.ImageField(upload_to='images/',blank=True, null=True)
+    images = models.ImageField(upload_to=filepath,blank=True, null=True)
     vedio = models.FileField(upload_to='videos/',blank=True, null=True)
     terms_conditions = models.TextField(blank= True, null= True)
     payment_opt = models.CharField(max_length=80,blank= True, null= True)
