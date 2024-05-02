@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 
-const Terms1 = () => {
+const Terms1 = ({ setIsCheckboxChecked }) => {
     const [showTermsPopup, setShowTermsPopup] = useState(true);
 
     const handleDisagree = () => {
         setShowTermsPopup(false);
+        // setShowTermsPopup(false);
+        setIsCheckboxChecked(false);
     };
 
     const handleAgree = () => {

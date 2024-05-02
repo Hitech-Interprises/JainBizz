@@ -41,9 +41,7 @@ const Service_CURD = () => {
                 
                 
             });
-            // const jsonData = await response.json(res.data);
-            // setData(jsonData);
-            // setFilteredData(jsonData)
+            setData(data.filter(item => item.allservice_id !== allservice_id));
             toast.success('Row deleted successfully.');
             setDeleteDatas(res.data);
            

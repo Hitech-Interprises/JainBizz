@@ -34,6 +34,8 @@ const Signup = (Validate) => {
            
         }
 
+        setPassword(e.target.value);
+
         setValues({ ...values, [name]: value });
         setErrors(Validate(values));
             
@@ -85,7 +87,7 @@ const Signup = (Validate) => {
         setShowPassword((prev) => !prev);
     };
 
-    return { handlechange, handlesubmit,errorMessage,formError, values,frontresp, setfrontresp };
+    return { handlechange, handlesubmit,errorMessage,formError, values,frontresp, setfrontresp,password, setPassword };
 };
 
 export default Signup;
