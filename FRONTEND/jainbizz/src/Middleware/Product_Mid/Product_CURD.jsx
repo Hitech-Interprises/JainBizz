@@ -121,6 +121,7 @@ const Product_CURD = () => {
     data,
     setData,
     getProduct_Delete,
+    getCategoryname
     // getProduct_View,
     // values, setValues
   }

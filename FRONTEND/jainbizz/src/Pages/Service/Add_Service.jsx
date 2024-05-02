@@ -13,11 +13,11 @@ const Add_Service = () => {
 
   const navigate = useNavigate()
 
-  const Pagenavigate =()=> {
-      navigate(`/Viewproducts/`);
+  const Pagenavigate = () => {
+    navigate(`/Viewproducts/`);
   }
 
-  const { 
+  const {
     handlechange, handlesubmit, values,
     selectedState, setSelectedState,
     selectedState2, setSelectedState2,
@@ -39,7 +39,7 @@ const Add_Service = () => {
     subCategories8, setSubCategories8,
     subCategories9, setSubCategories9,
     selectedFile, setSelectedFile,
-    
+
 
 
     selectedFile6, setSelectedFile6,
@@ -48,12 +48,12 @@ const Add_Service = () => {
 
 
     handlecatergory, handleSubCategoryChange, handleSubCategory3, handleSubCategory4, handleSubCategory5, handleSubCategory6,
-    handleSubCategory7, handleSubCategory8, handleSubCategory9, handleFileChange,handlesubmitproducts, frontresp, setfrontresp, handlechangeupdate,
+    handleSubCategory7, handleSubCategory8, handleSubCategory9, handleFileChange, handlesubmitproducts, frontresp, setfrontresp, handlechangeupdate,
     handleFileChange6
   } = Service_Mid(Validate);
 
 
-    
+
 
   const [datas, setDatas] = useState([]);
 
@@ -68,7 +68,7 @@ const Add_Service = () => {
   // })
 
 
-  
+
 
 
 
@@ -120,250 +120,252 @@ const Add_Service = () => {
   return (
     <div class=''>
       <div class='flex bg-gray-100 '>
-        <div class=''>
+        <div class='fixed'>
           <Sidebar />
         </div>
-        <div className=''>
+        <div className='ml-64'>
           <div class="max-w-full w-[83vw] h-mx-auto sm:px-6 lg:px-8">
             <form>
               {currentStep === 1 &&
-                <div className='flex flex-col items-center justify-center w-[70vw]'>
-                  <div className="bg-white border-4 rounded-lg shadow w-full max-w-full relative m-10">
-                    <div className="flex items-start justify-between p-2 border-b rounded-t">
-                      <h1 className="text-xl font-semibold">
-                        Add New Services
-                      </h1>
-                      <div className="top-4 right-4">
-                        <button className="bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 rounded-full shadow-lg" onClick={Pagenavigate}>
-                          View All Services
-                        </button>
+                <div className='h-screen'>
+                  <div className='flex flex-col items-center justify-center w-[70vw]'>
+                    <div className="bg-white border-4 rounded-lg shadow w-full max-w-full relative m-10">
+                      <div className="flex items-start justify-between p-2 border-b rounded-t">
+                        <h1 className="text-xl font-semibold">
+                          Add New Services
+                        </h1>
+                        <div className="top-4 right-4">
+                          <button className="bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 rounded-full shadow-lg" onClick={Pagenavigate}>
+                            View All Services
+                          </button>
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="p-6 space-y-6">
-                      <h5 className="text-xl font-semibold">
-                        General Information
-                      </h5>
+                      <div className="p-6 space-y-6">
+                        <h5 className="text-xl font-semibold">
+                          General Information
+                        </h5>
 
-                      <div className="grid grid-cols-9 gap-6">
-                        <div className="col-span-9 sm:col-span-3">
-                          <div className="mb-4">
-                            <label htmlFor="categories" className="block text-gray-700 font-medium mb-2">Main Category</label>
-                            <select
-                              id="categories"
-                              name="categories"
-                              className="border-1 border-black p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
-                              onChange={handlecatergory}
-                              // onChange={handleMainCategoryChange}
-                              value={selectedState}
-                            >
-                              <option value="">Select Main Category</option>
-                              {datas.map(category => (
-                                <option key={category.cate_id} value={category.cate_id}>{category.name}</option>
+                        <div className="grid grid-cols-9 gap-6">
+                          <div className="col-span-9 sm:col-span-3">
+                            <div className="mb-4">
+                              <label htmlFor="categories" className="block text-gray-700 font-medium mb-2">Main Category</label>
+                              <select
+                                id="categories"
+                                name="categories"
+                                className="border-1 border-black p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
+                                onChange={handlecatergory}
+                                // onChange={handleMainCategoryChange}
+                                value={selectedState}
+                              >
+                                <option value="">Select Main Category</option>
+                                {datas.map(category => (
+                                  <option key={category.cate_id} value={category.cate_id}>{category.name}</option>
 
-                              ))}
-                            </select>
+                                ))}
+                              </select>
+                            </div>
                           </div>
+
+                          {selectedState && (
+                            <div className="col-span-9 sm:col-span-3">
+                              <div className="mb-4">
+                                <label htmlFor="categories" className="block text-gray-700 font-medium mb-2">Depth 2</label>
+                                <select
+                                  id="categories"
+                                  name="categories"
+                                  className="border-1 border-black p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
+
+                                  onChange={handleSubCategoryChange}
+                                  value={selectedState2}
+                                >
+                                  <option value="">Choose any Options</option>
+                                  {subCategories.map(categories => (
+                                    <option key={categories.cate_id} value={categories.cate_id}>{categories.name}</option>
+                                  ))}
+                                </select>
+                              </div>
+                            </div>
+                          )}
+                          {/* ----------------------------------------------------------------PART-3------------------------------------------------------------- */}
+                          {selectedState2 && (
+                            <div className="col-span-9 sm:col-span-3">
+                              <div className="mb-4">
+                                <label htmlFor="categories" className="block text-gray-700 font-medium mb-2">Depth 3</label>
+
+
+                                <select
+                                  id="categories"
+                                  name="categories"
+                                  className="border-1 border-black p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
+
+                                  onChange={handleSubCategory3}
+                                  value={selectedState3}
+                                >
+                                  <option value="">Choose any Options</option>
+                                  {subCategories2.map(categories => (
+                                    <option key={categories.cate_id} value={categories.cate_id}>{categories.name}</option>
+                                  ))}
+                                </select>
+                              </div>
+                            </div>
+                          )}
+                          {/* -------------------------------------------------------------------Part-4------------------------------------------------------------               */}
+
+                          {selectedState3 && (
+                            <div className="col-span-9 sm:col-span-3">
+                              <div className="mb-4">
+                                <label htmlFor="categories" className="block text-gray-700 font-medium mb-2">Depth 4</label>
+                                <select
+                                  id="categories"
+                                  name="categories"
+                                  className="border-1 border-black p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
+
+                                  onChange={handleSubCategory4}
+                                  value={selectedState4}
+                                >
+                                  <option value="">Choose any Options</option>
+                                  {subCategories3.map(categories => (
+                                    <option key={categories.cate_id} value={categories.cate_id}>{categories.name}</option>
+                                  ))}
+                                </select>
+                              </div>
+                            </div>
+                          )}
+
+
+                          {/* -------------------------------------------------------------------Part-5------------------------------------------------------------               */}
+
+                          {selectedState4 && (
+                            <div className="col-span-9 sm:col-span-3">
+                              <div className="mb-4">
+                                <label htmlFor="categories" className="block text-gray-700 font-medium mb-2">Depth 5</label>
+                                <select
+                                  id="categories"
+                                  name="categories"
+                                  className="border-1 border-black p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
+
+                                  onChange={handleSubCategory5}
+                                  value={selectedState5}
+                                >
+                                  <option value="">Choose any Options</option>
+                                  {subCategories4.map(categories => (
+                                    <option key={categories.cate_id} value={categories.cate_id}>{categories.name}</option>
+                                  ))}
+                                </select>
+                              </div>
+                            </div>
+                          )}
+
+
+                          {/* -------------------------------------------------------------------Part-6--------------------------------------------------------------------------*/}
+
+
+
+                          {selectedState5 && (
+                            <div className="col-span-9 sm:col-span-3">
+                              <div className="mb-4">
+                                <label htmlFor="categories" className="block text-gray-700 font-medium mb-2">Depth 6</label>
+                                <select
+                                  id="categories"
+                                  name="categories"
+                                  className="border-1 border-black p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
+
+                                  onChange={handleSubCategory6}
+                                  value={selectedState6}
+                                >
+                                  <option value="">Choose any Options</option>
+                                  {subCategories5.map(categories => (
+                                    <option key={categories.cate_id} value={categories.cate_id}>{categories.name}</option>
+                                  ))}
+                                </select>
+                              </div>
+                            </div>
+                          )}
+
+
+
+                          {/* -------------------------------------------------------------------Part-7--------------------------------------------------------------------------*/}
+
+
+                          {selectedState6 && (
+                            <div className="col-span-9 sm:col-span-3">
+                              <div className="mb-4">
+                                <label htmlFor="categories" className="block text-gray-700 font-medium mb-2">Depth 7</label>
+                                <select
+                                  id="categories"
+                                  name="categories"
+                                  className="border-1 border-black p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
+
+                                  onChange={handleSubCategory7}
+                                  value={selectedState7}
+                                >
+                                  <option value="">Choose any Options</option>
+                                  {subCategories6.map(categories => (
+                                    <option key={categories.cate_id} value={categories.cate_id}>{categories.name}</option>
+                                  ))}
+                                </select>
+                              </div>
+                            </div>
+                          )}
+
+                          {/* -------------------------------------------------------------------Part-8--------------------------------------------------------------------------*/}
+
+
+                          {selectedState7 && (
+                            <div className="col-span-9 sm:col-span-3">
+                              <div className="mb-4">
+                                <label htmlFor="categories" className="block text-gray-700 font-medium mb-2">Depth 8</label>
+                                <select
+                                  id="categories"
+                                  name="categories"
+                                  className="border-1 border-black p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
+
+                                  onChange={handleSubCategory8}
+                                  value={selectedState8}
+                                >
+                                  <option value="">Choose any Options</option>
+                                  {subCategories7.map(categories => (
+                                    <option key={categories.cate_id} value={categories.cate_id}>{categories.name}</option>
+                                  ))}
+                                </select>
+                              </div>
+                            </div>
+                          )}
+
+                          {/* -------------------------------------------------------------------Part-9--------------------------------------------------------------------------*/}
+
+                          {selectedState8 && (
+                            <div className="col-span-9 sm:col-span-3">
+                              <div className="mb-4">
+                                <label htmlFor="categories" className="block text-gray-700 font-medium mb-2">Depth 9</label>
+                                <select
+                                  id="categories"
+                                  name="categories"
+                                  className="border-1 border-black p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
+
+                                  onChange={handleSubCategory9}
+                                  value={selectedState9}
+                                >
+                                  <option value="">Choose any Options</option>
+                                  {subCategories8.map(categories => (
+                                    <option key={categories.cate_id} value={categories.cate_id}>{categories.name}</option>
+                                  ))}
+                                </select>
+                              </div>
+                            </div>
+                          )}
+
+                          {/* -------------------------------------------------------------------Part-end--------------------------------------------------------------------------*/}
+
                         </div>
 
-                        {selectedState && (
-                          <div className="col-span-9 sm:col-span-3">
-                            <div className="mb-4">
-                              <label htmlFor="categories" className="block text-gray-700 font-medium mb-2">Depth 2</label>
-                              <select
-                                id="categories"
-                                name="categories"
-                                className="border-1 border-black p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
 
-                                onChange={handleSubCategoryChange}
-                                value={selectedState2}
-                              >
-                                <option value="">Choose any Options</option>
-                                {subCategories.map(categories => (
-                                  <option key={categories.cate_id} value={categories.cate_id}>{categories.name}</option>
-                                ))}
-                              </select>
-                            </div>
-                          </div>
-                        )}
-                        {/* ----------------------------------------------------------------PART-3------------------------------------------------------------- */}
-                        {selectedState2 && (
-                          <div className="col-span-9 sm:col-span-3">
-                            <div className="mb-4">
-                              <label htmlFor="categories" className="block text-gray-700 font-medium mb-2">Depth 3</label>
-
-
-                              <select
-                                id="categories"
-                                name="categories"
-                                className="border-1 border-black p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
-
-                                onChange={handleSubCategory3}
-                                value={selectedState3}
-                              >
-                                <option value="">Choose any Options</option>
-                                {subCategories2.map(categories => (
-                                  <option key={categories.cate_id} value={categories.cate_id}>{categories.name}</option>
-                                ))}
-                              </select>
-                            </div>
-                          </div>
-                        )}
-                        {/* -------------------------------------------------------------------Part-4------------------------------------------------------------               */}
-
-                        {selectedState3 && (
-                          <div className="col-span-9 sm:col-span-3">
-                            <div className="mb-4">
-                              <label htmlFor="categories" className="block text-gray-700 font-medium mb-2">Depth 4</label>
-                              <select
-                                id="categories"
-                                name="categories"
-                                className="border-1 border-black p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
-
-                                onChange={handleSubCategory4}
-                                value={selectedState4}
-                              >
-                                <option value="">Choose any Options</option>
-                                {subCategories3.map(categories => (
-                                  <option key={categories.cate_id} value={categories.cate_id}>{categories.name}</option>
-                                ))}
-                              </select>
-                            </div>
-                          </div>
-                        )}
-
-
-                        {/* -------------------------------------------------------------------Part-5------------------------------------------------------------               */}
-
-                        {selectedState4 && (
-                          <div className="col-span-9 sm:col-span-3">
-                            <div className="mb-4">
-                              <label htmlFor="categories" className="block text-gray-700 font-medium mb-2">Depth 5</label>
-                              <select
-                                id="categories"
-                                name="categories"
-                                className="border-1 border-black p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
-
-                                onChange={handleSubCategory5}
-                                value={selectedState5}
-                              >
-                                <option value="">Choose any Options</option>
-                                {subCategories4.map(categories => (
-                                  <option key={categories.cate_id} value={categories.cate_id}>{categories.name}</option>
-                                ))}
-                              </select>
-                            </div>
-                          </div>
-                        )}
-
-
-                        {/* -------------------------------------------------------------------Part-6--------------------------------------------------------------------------*/}
-
-
-
-                        {selectedState5 && (
-                          <div className="col-span-9 sm:col-span-3">
-                            <div className="mb-4">
-                              <label htmlFor="categories" className="block text-gray-700 font-medium mb-2">Depth 6</label>
-                              <select
-                                id="categories"
-                                name="categories"
-                                className="border-1 border-black p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
-
-                                onChange={handleSubCategory6}
-                                value={selectedState6}
-                              >
-                                <option value="">Choose any Options</option>
-                                {subCategories5.map(categories => (
-                                  <option key={categories.cate_id} value={categories.cate_id}>{categories.name}</option>
-                                ))}
-                              </select>
-                            </div>
-                          </div>
-                        )}
-
-
-
-                        {/* -------------------------------------------------------------------Part-7--------------------------------------------------------------------------*/}
-
-
-                        {selectedState6 && (
-                          <div className="col-span-9 sm:col-span-3">
-                            <div className="mb-4">
-                              <label htmlFor="categories" className="block text-gray-700 font-medium mb-2">Depth 7</label>
-                              <select
-                                id="categories"
-                                name="categories"
-                                className="border-1 border-black p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
-
-                                onChange={handleSubCategory7}
-                                value={selectedState7}
-                              >
-                                <option value="">Choose any Options</option>
-                                {subCategories6.map(categories => (
-                                  <option key={categories.cate_id} value={categories.cate_id}>{categories.name}</option>
-                                ))}
-                              </select>
-                            </div>
-                          </div>
-                        )}
-
-                        {/* -------------------------------------------------------------------Part-8--------------------------------------------------------------------------*/}
-
-
-                        {selectedState7 && (
-                          <div className="col-span-9 sm:col-span-3">
-                            <div className="mb-4">
-                              <label htmlFor="categories" className="block text-gray-700 font-medium mb-2">Depth 8</label>
-                              <select
-                                id="categories"
-                                name="categories"
-                                className="border-1 border-black p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
-
-                                onChange={handleSubCategory8}
-                                value={selectedState8}
-                              >
-                                <option value="">Choose any Options</option>
-                                {subCategories7.map(categories => (
-                                  <option key={categories.cate_id} value={categories.cate_id}>{categories.name}</option>
-                                ))}
-                              </select>
-                            </div>
-                          </div>
-                        )}
-
-                        {/* -------------------------------------------------------------------Part-9--------------------------------------------------------------------------*/}
-
-                        {selectedState8 && (
-                          <div className="col-span-9 sm:col-span-3">
-                            <div className="mb-4">
-                              <label htmlFor="categories" className="block text-gray-700 font-medium mb-2">Depth 9</label>
-                              <select
-                                id="categories"
-                                name="categories"
-                                className="border-1 border-black p-2 w-full rounded-lg focus:outline-none focus:border-blue-400"
-
-                                onChange={handleSubCategory9}
-                                value={selectedState9}
-                              >
-                                <option value="">Choose any Options</option>
-                                {subCategories8.map(categories => (
-                                  <option key={categories.cate_id} value={categories.cate_id}>{categories.name}</option>
-                                ))}
-                              </select>
-                            </div>
-                          </div>
-                        )}
-
-                        {/* -------------------------------------------------------------------Part-end--------------------------------------------------------------------------*/}
-
+                        <div class="p-6 border-t border-gray-200 rounded-b">
+                          <button class="text-white bg-yellow-500 hover:bg-yellow-400 focus:ring-4 focus:ring-yellow-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center" onClick={handleNext}>Add Details </button>
+                        </div>
+                        {/* </form> */}
                       </div>
-
-
-                      <div class="p-6 border-t border-gray-200 rounded-b">
-                        <button class="text-white bg-yellow-500 hover:bg-yellow-400 focus:ring-4 focus:ring-yellow-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center" onClick={handleNext}>Add Details </button>
-                      </div>
-                      {/* </form> */}
                     </div>
                   </div>
                 </div>}
@@ -374,7 +376,7 @@ const Add_Service = () => {
 
                 {/* ----------------------------------------------------------------------------------------------------------------------------------------------------- */}
 
-                <div class='rounded bg-white mt-4'>
+                <div class='rounded bg-white mt-4 h-full'>
 
                   <div class='grid grid-cols-2 '>
                     <div class=' mr-5'>
@@ -411,7 +413,7 @@ const Add_Service = () => {
                             <label for="target_audience" class="block text-gray-700 font-medium mb-2">Target Audience</label>
                             <input type="text" name="target_audience" id="target_audience" class="shadow-sm  border bg-white  border-gray-300 text-gray-900 sm:text-sm rounded-lg outline-none  focus:outline-yellow-500 focus:border-yellow-600 block w-full p-2.5" placeholder="Apple" onChange={handlechange} value={values.target_audience} />
 
-                            
+
                             {/* <select id="sizes" name="sizes"
                               class="border border-gray-400 bg-white p-2 w-full rounded-lg outline-none  focus:outline-yellow-500 focus:border-blue-400" onChange={handlechange} value={values.sizes} >
                               <option value="">Select Target Audience</option>
@@ -516,22 +518,22 @@ const Add_Service = () => {
                             {/* -------------------- */}
 
                             <div id="image-preview" className="bg-white text-center cursor-pointer">
-                                <label htmlFor="images" className="cursor-pointer">
+                              <label htmlFor="images" className="cursor-pointer">
                                 {selectedFile ? (
-                                    <img src={URL.createObjectURL(selectedFile)} className="h-auto flex justify-center rounded-lg mx-auto" alt="Image preview" />
-                                  ) : (
-                                    <div>
-                                      <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-700">Upload image</h5>
-                                      <p className="font-normal text-sm text-gray-400 md:px-6"><b className="text-gray-600"></b></p>
-                                      <p className="font-normal text-sm text-gray-400 md:px-6"> <b className="text-gray-600"></b> </p>
-                                      <span id="filename" className="text-gray-500 bg-gray-200 z-50">{selectedFile ? selectedFile.name : ''}</span>
-                                    </div>
-                                  )}
-                                </label>
-                                <input id="images" name='images' type="file" className="hidden" accept="image/*" onChange={handleFileChange} />
+                                  <img src={URL.createObjectURL(selectedFile)} className="h-auto flex justify-center rounded-lg mx-auto" alt="Image preview" />
+                                ) : (
+                                  <div>
+                                    <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-700">Upload image</h5>
+                                    <p className="font-normal text-sm text-gray-400 md:px-6"><b className="text-gray-600"></b></p>
+                                    <p className="font-normal text-sm text-gray-400 md:px-6"> <b className="text-gray-600"></b> </p>
+                                    <span id="filename" className="text-gray-500 bg-gray-200 z-50">{selectedFile ? selectedFile.name : ''}</span>
+                                  </div>
+                                )}
+                              </label>
+                              <input id="images" name='images' type="file" className="hidden" accept="image/*" onChange={handleFileChange} />
 
 
-                              </div>
+                            </div>
                           </div>
                         </div>
 
@@ -556,22 +558,22 @@ const Add_Service = () => {
                             </div> */}
 
                             <div id="image-preview" className="bg-white text-center cursor-pointer">
-                                <label htmlFor="vedio" className="cursor-pointer">
-                                  {selectedFile6 ? (
-                                    <img src={URL.createObjectURL(selectedFile6)} className="h-auto flex justify-center rounded-lg mx-auto" alt="Image preview" />
-                                  ) : (
-                                    <div>
-                                      <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-700">Upload image</h5>
-                                      <p className="font-normal text-sm text-gray-400 md:px-6"><b className="text-gray-600"></b></p>
-                                      <p className="font-normal text-sm text-gray-400 md:px-6"> <b className="text-gray-600"></b> </p>
-                                      <span id="filename" className="text-gray-500 bg-gray-200 z-50">{selectedFile6 ? selectedFile6.name : ''}</span>
-                                    </div>
-                                  )}
-                                </label>
-                                <input id="vedio" name='vedio' type="file" className="hidden" accept="image/*" onChange={handleFileChange6} />
+                              <label htmlFor="vedio" className="cursor-pointer">
+                                {selectedFile6 ? (
+                                  <img src={URL.createObjectURL(selectedFile6)} className="h-auto flex justify-center rounded-lg mx-auto" alt="Image preview" />
+                                ) : (
+                                  <div>
+                                    <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-700">Upload image</h5>
+                                    <p className="font-normal text-sm text-gray-400 md:px-6"><b className="text-gray-600"></b></p>
+                                    <p className="font-normal text-sm text-gray-400 md:px-6"> <b className="text-gray-600"></b> </p>
+                                    <span id="filename" className="text-gray-500 bg-gray-200 z-50">{selectedFile6 ? selectedFile6.name : ''}</span>
+                                  </div>
+                                )}
+                              </label>
+                              <input id="vedio" name='vedio' type="file" className="hidden" accept="image/*" onChange={handleFileChange6} />
 
 
-                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -626,9 +628,9 @@ const Add_Service = () => {
                           </div>
 
                           <div>
-                          <label for="date" class="block text-gray-700 dark:text-white mb-1">Date</label>
-                          <input type="date" id="date" name='date' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700 dark:text-white dark:border-none outline-none  focus:outline-yellow-500" onChange={handlechange} value={values.date} />
-                        </div>
+                            <label for="date" class="block text-gray-700 dark:text-white mb-1">Date</label>
+                            <input type="date" id="date" name='date' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700 dark:text-white dark:border-none outline-none  focus:outline-yellow-500" onChange={handlechange} value={values.date} />
+                          </div>
 
                           <div class="mb-2 ">
                             <label for="service_cost" class="block text-gray-700 font-medium mb-2">Service Cost</label>
@@ -649,7 +651,7 @@ const Add_Service = () => {
                             <label for="service_security" class="block text-gray-700 font-medium mb-2">Service Security</label>
                             <input type="text" id="service_security" name="service_security"
                               class="border border-gray-400 p-2 w-full rounded-lg outline-none  focus:outline-yellow-500  focus:border-blue-400" onChange={handlechange} value={values.service_security} />
-                          </div>                          
+                          </div>
                           <div class="mb-">
                             <label for="service_custom" class="block text-gray-700 font-medium mb-2">Service Custom</label>
                             <input type="text" id="service_custom" name="service_custom"
@@ -696,7 +698,7 @@ const Add_Service = () => {
             </form>
 
           </div>
-          <ToastContainer/>
+          <ToastContainer />
         </div>
       </div>
     </div>

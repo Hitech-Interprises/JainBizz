@@ -398,7 +398,7 @@ const Add_ProductsDetails = () => {
                     <div class=' mr-5'>
                       <h1 class='mb-4 mt-3 ml-11 '>Products Details Page</h1>
                       <div class='flex justify-end mt-[74px]'>
-                        <div class='w-[700px]  bg-gray-200  bg-opacity-50 border-2 rounded-md p-2' >
+                        <div class='w-[700px]  bg-yellow-100  bg-opacity-50 border-2 rounded-md p-2' >
                           <h2 class="text-xl font-semibold text-gray-700 dark:text-white mb-2">General Details</h2>
                           <div class="col-span-6 sm:col-span-3 mb-2  ">
                             <label for="product_name" class="text-sm font-medium  text-gray-900 block mb-2">Product Name</label>
@@ -441,7 +441,7 @@ const Add_ProductsDetails = () => {
                       </div>
 
                       <div class='flex justify-end mt-2'>
-                        <div class='bg-gray-200 bg-opacity-50 rounded w-[700px] h-auto p-2'>
+                        <div class='bg-yellow-100 bg-opacity-50 rounded w-[700px] h-auto p-2'>
                           <h2 class="text-xl font-semibold text-gray-700 dark:text-white mb-2">Product Information</h2>
                           <div class="mb-2 ">
                             <label for="brand" class="block text-gray-700 font-medium mb-2">brand</label>
@@ -478,7 +478,7 @@ const Add_ProductsDetails = () => {
 
 
                       <div class='flex justify-end mt-2'>
-                        <div class='bg-gray-200 bg-opacity-50 rounded w-[700px] h-auto p-2'>
+                        <div class='bg-yellow-100 bg-opacity-50 rounded w-[700px] h-auto p-2'>
                           <h2 class="text-xl font-semibold text-gray-700 dark:text-white mb-2">Related</h2>
 
                           <div class="mb-2 ">
@@ -709,7 +709,7 @@ const Add_ProductsDetails = () => {
 
 
 
-                      <div class='w-[700px] mt-2.5 bg-gray-200 bg-opacity-50 border p-2 rounded mb-[18px] ' >
+                      <div class='w-[700px] mt-2.5 bg-yellow-100 bg-opacity-50 border p-2 rounded mb-[18px] ' >
                         <h2 class="text-xl font-semibold text-gray-700 dark:text-white mb-2">Varients</h2>
 
                         <div class='flex gap-4'>
@@ -921,7 +921,7 @@ const Add_ProductsDetails = () => {
 
 
 
-                      <div class='w-[700px] mt-2 bg-gray-200 bg-opacity-50 border p-2 rounded mb-3'>
+                      <div class='w-[700px] mt-2 bg-yellow-100 bg-opacity-50 border p-2 rounded mb-3'>
                         <h2 class="text-xl font-semibold text-gray-700 dark:text-white mb-2">Pricing And Stock</h2>
                         <div class="grid grid-cols-2 gap-2">
                           <div>
@@ -968,7 +968,7 @@ const Add_ProductsDetails = () => {
                       </div>
 
                       <div class='mt-2'>
-                        <div class='bg-gray-200 bg-opacity-50 rounded w-[700px] h-auto p-2'>
+                        <div class='bg-yellow-100 bg-opacity-50 rounded w-[700px] h-auto p-2'>
                           <h2 class="text-xl font-semibold text-gray-700 dark:text-white  mb-4">More Information</h2>
                           <div class="mb-2 ">
                             <label for="offers" class="block text-gray-700 font-medium mb-2">Offers</label>
