@@ -26,11 +26,11 @@ const Service_CURD = () => {
         }
     };
 
-    const getService_Delete = async (allservice_id) => {
+    const getService_Delete = async (service_id) => {
         try {
             const formData = new FormData();
             formData.append('userid', 'be5a6874-83f4-4c58-9c89-2b0918b3f874');
-            formData.append('allservice_id', allservice_id);
+            formData.append('allservice_id', service_id);
     
             console.log(formData)
     
@@ -41,29 +41,27 @@ const Service_CURD = () => {
                 
                 
             });
-            // const jsonData = await response.json(res.data);
-            // setData(jsonData);
-            // setFilteredData(jsonData)
+            setData(data.filter(item => item.service_id !== service_id));
+            console.log(data,"+++++&&&")
             toast.success('Row deleted successfully.');
             setDeleteDatas(res.data);
            
             
         } catch (err) {
-          if (err.response) {
-            
-              console.log(err.response.data);
-              console.log(err.response.status);
-              console.log(err.response.headers);
-              // toast.error('Server Error. Please try again later.');
-          } else if (err.request) {
+        //   if (err.response) {            
+        //       console.log(err.response.data);
+        //       console.log(err.response.status);
+        //       console.log(err.response.headers);
+        //       // toast.error('Server Error. Please try again later.');
+        //   } else if (err.request) {
              
-              console.log(err.request);
-              // toast.error('No response from server. Please check your internet connection.');
-          } else {
-              // Something happened in setting up the request that triggered an Error
-              console.log('Error', err.message);
-              // toast.error('Something went wrong. Please try again later.');
-          }
+        //       console.log(err.request);
+        //       // toast.error('No response from server. Please check your internet connection.');
+        //   } else {
+        //       // Something happened in setting up the request that triggered an Error
+        //       console.log('Error', err.message);
+        //       // toast.error('Something went wrong. Please try again later.');
+        //   }
           console.log(err);
       }
       };

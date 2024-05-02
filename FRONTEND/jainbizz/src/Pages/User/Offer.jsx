@@ -203,7 +203,7 @@ const Offer = () => {
                                 </select>
                             </div>
 
-                            <h3 class="text-xl font-bold text-gray-900 mt-2">Offer Description</h3>
+                            <h3 class="text-xl font-bold text-gray-900 mt-2 ">Offer Description</h3>
                             <textarea id="description" name="description"
                                 class="border border-gray-400 p-2 w-full rounded-lg outline-none  focus:outline-yellow-500  focus:border-blue-400 " rows="5"></textarea>
                             <div class="flex items-center justify-end mt-2">

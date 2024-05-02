@@ -27,9 +27,15 @@ const ViewSerivces = () => {
 
   
 
-   useEffect(() => {
+  useEffect(() => {
+    // Set filtered data initially when component mounts
     setFilteredData(data);
-    }, [data]);
+  }, [data]); //
+
+    useEffect(() => {
+        // Filter data based on search query when searchQuery changes
+        handleSearch();
+    }, [searchQuery]);
 
     const handleSearch = () => {
         const lowercaseQuery = searchQuery.toLowerCase();
@@ -79,7 +85,7 @@ const ViewSerivces = () => {
                     <option value="Free">Free</option>
                     <option value="Paid">Paid</option>
                 </select>
-                {/* filteredData.map is not a function */}
+
                 </div>
                
                 <div class='bg-white '>
@@ -112,41 +118,43 @@ const ViewSerivces = () => {
                          </th>
                      </tr>
                  </thead>
-                 <tbody class="bg-white divide-y divide-gray-200 font-semibold">
-                    {filteredData.map((item, index) => (
-                         <tr key={index}>
-                             <td class="px-6 py-4 whitespace-nowrap">
-                                 <div class="flex items-center">
-                                     <div class="flex-shrink-0 h-10 w-10">
-                                         <img class="h-10 w-10 rounded-full" src={item.images} alt="/Backend/images" />
-                                     </div>
-                                 </div>
-                             </td>
-                             <td class="px-6 py-4 whitespace-nowrap">
-                                 <div class="text-sm text-gray-900">{item.service_name}</div>
-                             </td>
-                             <td class="px-6 py-4 whitespace-nowrap">
-                                 <div class="text-sm text-gray-600">{item.service_type}</div>
-                             </td>
-                             <td class="px-6 py-4 whitespace-nowrap">
-                                 <div class="text-sm text-gray-600">{item.service_cost}</div>
-                             </td>
-                             <td class="px-6 py-4 whitespace-nowrap">
-                                 <div class="text-sm text-gray-600">{item.payment_opt}</div>
-                             </td>
-                             <td class="px-6 py-4 whitespace-nowrap">
-                                 <div class="text-sm text-gray-600">{item.discounts_promo}</div>
-                             </td>
-                             <td class="px-6 py-4 whitespace-nowrap">
-                                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Yes</span>
-                             </td>
-                             <td class="px-6 py-4 whitespace-nowrap  text-sm font-medium">
-                                 <a href="#" class="text-indigo-600 hover:text-indigo-900" onClick={() => getProduct_View(item.service_id)}><TbEyeEdit class='text-3xl inline-flex' /></a>
-                                 <a href="#" className="ml-2 text-red-600 hover:text-red-900" onClick={() => getService_Delete(item.service_id)}><AiTwotoneDelete className='text-3xl inline-flex' /></a>
-                             </td>
-                         </tr>
-                     ))}
-                 </tbody>
+                 <tbody className="bg-white divide-y divide-gray-200 font-semibold">
+                  {filteredData.map((item, index) => (
+                    <tr key={index}>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="flex items-center">
+                          <div className="flex items-center justify-center w-8 h-8 text-blue-500 bg-blue-100 rounded-full dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm text-gray-900">{item.service_name}</div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm text-gray-600">{item.service_type}</div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm text-gray-600">{item.service_cost}</div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm text-gray-600">{item.payment_opt}</div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm text-gray-600">{item.discounts_promo}</div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Yes</span>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap  text-sm font-medium">
+                        <a href="#" className="text-indigo-600 hover:text-indigo-900" onClick={() => getProduct_View(item.service_id)}><TbEyeEdit className='text-3xl inline-flex' /></a>
+                        <a href="#" className="ml-2 text-red-600 hover:text-red-900" onClick={() => getService_Delete(item.service_id)}><AiTwotoneDelete className='text-3xl inline-flex' /></a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
                     </table>
 
                 </div>

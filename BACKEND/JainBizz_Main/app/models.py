@@ -146,7 +146,7 @@ class AllService_db(models.Model):
     service_duration = models.CharField(max_length=200,blank= True, null= True)
     service_security = models.CharField(max_length=200,blank= True, null= True)
     service_custom = models.CharField(max_length=200,blank= True, null= True)
-    parent_userid =  models.ForeignKey(SignupModel, on_delete=models.CASCADE, to_field='userid',  default='be5a6874-83f4-4c58-9c89-2b0918b3f874')
+    parent_userid =  models.ForeignKey(SignupModel, on_delete=models.CASCADE, to_field='userid',  default='bf986e4e-1d89-42ed-b49d-491ebbbcb4dc')
     date = models.DateField(blank= False, null=False, help_text='Required')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
@@ -189,7 +189,7 @@ class AllProducts_db(models.Model):
     measurement_units = models.ForeignKey(Measurement_UnitsModels, on_delete=models.CASCADE, to_field='units')
     assembly_installation = models.TextField(blank= True, null= True,)
     others_deatils = models.TextField(blank= True, null= True,)
-    parent_userid =  models.ForeignKey(SignupModel, on_delete=models.CASCADE, to_field='userid',  default='be5a6874-83f4-4c58-9c89-2b0918b3f874')
+    parent_userid =  models.ForeignKey(SignupModel, on_delete=models.CASCADE, to_field='userid',  default='bf986e4e-1d89-42ed-b49d-491ebbbcb4dc')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
 

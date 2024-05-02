@@ -46,9 +46,8 @@ const Product_CURD = () => {
                 
             });
             setData(data.filter(item => item.allproduct_id !== allproduct_id));
-            toast.success('Row deleted successfully');
-            // setSuccessMessage('Row deleted successfully.');
-    
+            console.log(data,"+++++&&&")
+            toast.success('Row deleted successfully');    
             setDeleteDatas(res.data);
         } catch (err) {
             console.log(err);

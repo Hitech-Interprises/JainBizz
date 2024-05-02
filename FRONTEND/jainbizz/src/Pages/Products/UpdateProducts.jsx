@@ -119,7 +119,7 @@ const UpdateProducts = () => {
 
 
 
-  const [datas, setDatas] = useState([]);
+  const [datas, setDatas ] = useState([]);
 
 
   const [currentStep, setCurrentStep] = useState(1);

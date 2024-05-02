@@ -18,8 +18,10 @@ const Registeration = () => {
     const [otpModelOpen, setOtpModelOpen] = useState(false)
     const [showTermsPopup, setShowTermsPopup] = useState(false);
     const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
-    const { handlechange, handlesubmit, errorMessage, formError, values, frontresp, setfrontresp } = Signup(Validation);
+    const { handlechange, handlesubmit, errorMessage, formError, values, frontresp, setfrontresp, password, setPassword } = Signup(Validation);
     const [getLogInOpen, setgetLogInOpen] = useState(false)
+    const [passwordVisible, setPasswordVisible] = useState(false);
+    // const [password, setPassword] = useState('');
     const navigation = useNavigate();
 
 
@@ -32,6 +34,13 @@ const Registeration = () => {
     const getLogInView = () => {
         navigation('/Login')
     }
+
+
+    
+
+    const togglePasswordVisibility = () => {
+        setPasswordVisible(!passwordVisible);
+    };
 
     
 
@@ -96,10 +105,16 @@ const Registeration = () => {
                                 <p className="mb-1 font-medium text-gray-500">Password<span class="required-field text-red-500">*</span></p>
                                 <div className="mb-4 flex flex-col">
                                     <div className="focus-within:border-yellow-500 relative flex overflow-hidden rounded-md border-2 transition sm:w-80 lg:w-full">
-
-                                        <input type='password' id="password" className="w-full border-gray-300 bg-white px-4 py-2 text-base text-gray-700 placeholder-gray-400 focus:outline-none" placeholder="Choose a password (minimum 8 characters)" onChange={handlechange} name='password' value={values.password} />
-                                        {errorMessage && <span className='text-red-500 font-medium  text-xs'>{errorMessage}</span>}
+                                    <button class="absolute right-0 focus:outline-none rtl:left-0 rtl:right-auto mt-2" onClick={togglePasswordVisibility}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mx-4 text-gray-400 transition-colors duration-300 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400">
+                                            <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
+                                            <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                    <input type={passwordVisible ? 'text' : 'password'} id="password" className="w-full border-gray-300 bg-white px-4 py-2 text-base text-gray-700 placeholder-gray-400 focus:outline-none" placeholder="Choose a password (minimum 8 characters)" onChange={handlechange} name='password' value={values.password} />
+                                      
                                     </div>
+                                    {errorMessage && <span className='text-red-500 font-medium  text-xs'>{errorMessage}</span>}
 
 
                                     {ShowModel && (
@@ -137,7 +152,7 @@ const Registeration = () => {
                                 {isCheckboxChecked && ( // Only render the Terms popup when the checkbox is checked
                                     <Popup open={showTermsPopup} onClose={() => setShowTermsPopup(false)}>
                                         <div className="p-8">
-                                            <Terms1 />
+                                            <Terms1 setIsCheckboxChecked={setIsCheckboxChecked}/>
                                         </div>
                                     </Popup>
                                 )}
