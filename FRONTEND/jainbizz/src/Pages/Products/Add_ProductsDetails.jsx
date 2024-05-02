@@ -119,7 +119,7 @@ const Add_ProductsDetails = () => {
 
   const getMainCategories = async () => {
     try {
-      const res = await axios.post("http://127.0.0.1:8000/app/MainCategoryView_List/", { userid: 'be5a6874-83f4-4c58-9c89-2b0918b3f874' });
+      const res = await axios.post("http://127.0.0.1:8000/app/MainCategoryView_List/", { userid: 'bf986e4e-1d89-42ed-b49d-491ebbbcb4dc' });
       setDatas(res.data);
     } catch (err) {
       console.log(err);
@@ -527,7 +527,7 @@ const Add_ProductsDetails = () => {
                             <div id="image-preview" className="bg-white text-center cursor-pointer">
                               <label htmlFor="images1" className="cursor-pointer">
                                 {selectedFile1 ? (
-                                  <img src={URL.createObjectURL(selectedFile1)} className="h-auto flex justify-center rounded-lg mx-auto" alt="Image preview" />
+                                  <img src={URL.createObjectURL(selectedFile1)} className="h-96 flex justify-center rounded-lg mx-auto" alt="Image preview" />
                                 ) : (
                                   <div>
                                     <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-700">Upload image</h5>

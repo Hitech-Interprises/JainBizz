@@ -24,27 +24,23 @@ const Offer = () => {
                 <div class="container-fluid mx-auto px-4">
                     <h2 class="text-3xl font-bold text-white mb-8">Post Your Latest Product</h2>
                     <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
-
-
                         <div class="bg-white rounded-lg shadow-lg p-3">
                             <div class="relative overflow-hidden">
                                 {/* ------------------------------------------------------------------------------------- */}
                                 <div class="w-auto h-[200px] bg-white rounded-lg  ring-gray-500 flex items-center justify-center mb-3 border-2">
                                     <div class="  ">
-                                        <div id="image-preview" className=" bg-white text-center cursor-pointer ">
-                                            {selectedFile ? (
-                                                <img src={URL.createObjectURL(selectedFile)} className="h-auto flex justify-center rounded-lg mx-auto" alt="Image preview" />
-                                            ) : (
-                                                <div>
-                                                    <label htmlFor="images1" className="cursor-pointer">
+                                        <div id="image-preview" className="bg-white text-center cursor-pointer">
+                                            <label htmlFor="images1" className="cursor-pointer">
+                                                {selectedFile ? (
+                                                    <img src={URL.createObjectURL(selectedFile)} className="h-96 flex justify-center rounded-lg mx-auto" alt="Image preview" />
+                                                ) : (
+                                                    <div>
                                                         <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-700">Click To Here Upload Image</h5>
                                                         <span id="filename" className="text-gray-500 bg-gray-200 z-50">{selectedFile ? selectedFile.name : ''}</span>
-                                                    </label>
-                                                    <label htmlFor="images1" >
-                                                        <input id="images1" name='images1' type="file" className="hidden" accept="image/*" onChange={handleFileChange} />
-                                                    </label>
-                                                </div>
-                                            )}
+                                                    </div>
+                                                )}
+                                            </label>
+                                            <input id="images1" name='images1' type="file" className="hidden" accept="image/*" onChange={handleFileChange} />
                                         </div>
                                     </div>
                                 </div>
@@ -75,20 +71,18 @@ const Offer = () => {
                                 {/* ------------------------------------------------------------------------------------- */}
                                 <div class="w-auto h-[200px] bg-white rounded-lg  ring-gray-500 flex items-center justify-center mb-3 border-2">
                                     <div class="  ">
-                                        <div id="image-preview" className=" bg-white text-center cursor-pointer ">
-                                            {selectedFile ? (
-                                                <img src={URL.createObjectURL(selectedFile)} className="h-auto flex justify-center rounded-lg mx-auto" alt="Image preview" />
-                                            ) : (
-                                                <div>
-                                                    <label htmlFor="images2" className="cursor-pointer">
+                                        <div id="image-preview" className="bg-white text-center cursor-pointer">
+                                            <label htmlFor="images1" className="cursor-pointer">
+                                                {selectedFile ? (
+                                                    <img src={URL.createObjectURL(selectedFile)} className="h-96 flex justify-center rounded-lg mx-auto" alt="Image preview" />
+                                                ) : (
+                                                    <div>
                                                         <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-700">Click To Here Upload Image</h5>
                                                         <span id="filename" className="text-gray-500 bg-gray-200 z-50">{selectedFile ? selectedFile.name : ''}</span>
-                                                    </label>
-                                                    <label htmlFor="images2" >
-                                                        <input id="images2" name='images2' type="file" className="hidden" accept="image/*" onChange={handleFileChange} />
-                                                    </label>
-                                                </div>
-                                            )}
+                                                    </div>
+                                                )}
+                                            </label>
+                                            <input id="images1" name='images1' type="file" className="hidden" accept="image/*" onChange={handleFileChange} />
                                         </div>
                                     </div>
                                 </div>
@@ -117,22 +111,20 @@ const Offer = () => {
                         <div class="bg-white rounded-lg shadow-lg p-3">
                             <div class="relative overflow-hidden">
                                 {/* ------------------------------------------------------------------------------------- */}
-                                <div class="w-auto h-[200px] bg-white rounded-lg ring-gray-500 flex items-center justify-center mb-3 border-2">
+                                <div class="w-auto h-[200px] bg-white rounded-lg  ring-gray-500 flex items-center justify-center mb-3 border-2">
                                     <div class="  ">
-                                        <div id="image-preview" className=" bg-white text-center cursor-pointer ">
-                                            {selectedFile ? (
-                                                <img src={URL.createObjectURL(selectedFile)} className="h-auto flex justify-center rounded-lg mx-auto" alt="Image preview" />
-                                            ) : (
-                                                <div>
-                                                    <label htmlFor="images3" className="cursor-pointer">
+                                        <div id="image-preview" className="bg-white text-center cursor-pointer">
+                                            <label htmlFor="images1" className="cursor-pointer">
+                                                {selectedFile ? (
+                                                    <img src={URL.createObjectURL(selectedFile)} className="h-96 flex justify-center rounded-lg mx-auto" alt="Image preview" />
+                                                ) : (
+                                                    <div>
                                                         <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-700">Click To Here Upload Image</h5>
                                                         <span id="filename" className="text-gray-500 bg-gray-200 z-50">{selectedFile ? selectedFile.name : ''}</span>
-                                                    </label>
-                                                    <label htmlFor="images3" >
-                                                        <input id="images3" name='images3' type="file" className="hidden" accept="image/*" onChange={handleFileChange} />
-                                                    </label>
-                                                </div>
-                                            )}
+                                                    </div>
+                                                )}
+                                            </label>
+                                            <input id="images1" name='images1' type="file" className="hidden" accept="image/*" onChange={handleFileChange} />
                                         </div>
                                     </div>
                                 </div>
@@ -161,22 +153,20 @@ const Offer = () => {
                         <div class="bg-white rounded-lg shadow-lg p-3">
                             <div class="relative overflow-hidden">
                                 {/* ------------------------------------------------------------------------------------- */}
-                                <div class="w-auto h-[200px] bg-white rounded-lg ring-gray-500 flex items-center justify-center mb-3 border-2">
+                                <div class="w-auto h-[200px] bg-white rounded-lg  ring-gray-500 flex items-center justify-center mb-3 border-2">
                                     <div class="  ">
-                                        <div id="image-preview" className=" bg-white text-center cursor-pointer ">
-                                            {selectedFile ? (
-                                                <img src={URL.createObjectURL(selectedFile)} className="h-auto flex justify-center rounded-lg mx-auto" alt="Image preview" />
-                                            ) : (
-                                                <div>
-                                                    <label htmlFor="images4" className="cursor-pointer">
+                                        <div id="image-preview" className="bg-white text-center cursor-pointer">
+                                            <label htmlFor="images1" className="cursor-pointer">
+                                                {selectedFile ? (
+                                                    <img src={URL.createObjectURL(selectedFile)} className="h-96 flex justify-center rounded-lg mx-auto" alt="Image preview" />
+                                                ) : (
+                                                    <div>
                                                         <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-700">Click To Here Upload Image</h5>
                                                         <span id="filename" className="text-gray-500 bg-gray-200 z-50">{selectedFile ? selectedFile.name : ''}</span>
-                                                    </label>
-                                                    <label htmlFor="images4" >
-                                                        <input id="images4" name='images4' type="file" className="hidden" accept="image/*" onChange={handleFileChange} />
-                                                    </label>
-                                                </div>
-                                            )}
+                                                    </div>
+                                                )}
+                                            </label>
+                                            <input id="images1" name='images1' type="file" className="hidden" accept="image/*" onChange={handleFileChange} />
                                         </div>
                                     </div>
                                 </div>
@@ -205,22 +195,20 @@ const Offer = () => {
                         <div class="bg-white rounded-lg shadow-lg p-3">
                             <div class="relative overflow-hidden">
                                 {/* ------------------------------------------------------------------------------------- */}
-                                <div class="w-auto h-[200px] bg-white rounded-lg ring-gray-500 flex items-center justify-center mb-3 border-2">
+                                <div class="w-auto h-[200px] bg-white rounded-lg  ring-gray-500 flex items-center justify-center mb-3 border-2">
                                     <div class="  ">
-                                        <div id="image-preview" className=" bg-white text-center cursor-pointer ">
-                                            {selectedFile ? (
-                                                <img src={URL.createObjectURL(selectedFile)} className="h-auto flex justify-center rounded-lg mx-auto" alt="Image preview" />
-                                            ) : (
-                                                <div>
-                                                    <label htmlFor="images5" className="cursor-pointer">
+                                        <div id="image-preview" className="bg-white text-center cursor-pointer">
+                                            <label htmlFor="images1" className="cursor-pointer">
+                                                {selectedFile ? (
+                                                    <img src={URL.createObjectURL(selectedFile)} className="h-96 flex justify-center rounded-lg mx-auto" alt="Image preview" />
+                                                ) : (
+                                                    <div>
                                                         <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-700">Click To Here Upload Image</h5>
                                                         <span id="filename" className="text-gray-500 bg-gray-200 z-50">{selectedFile ? selectedFile.name : ''}</span>
-                                                    </label>
-                                                    <label htmlFor="images5" >
-                                                        <input id="images5" name='images5' type="file" className="hidden" accept="image/*" onChange={handleFileChange} />
-                                                    </label>
-                                                </div>
-                                            )}
+                                                    </div>
+                                                )}
+                                            </label>
+                                            <input id="images1" name='images1' type="file" className="hidden" accept="image/*" onChange={handleFileChange} />
                                         </div>
                                     </div>
                                 </div>
