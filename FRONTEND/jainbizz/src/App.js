@@ -11,11 +11,9 @@ import UpdateProducts from "./Pages/Products/UpdateProducts";
 import Terms1 from "./Components/Terms1";
 import NewUpdateProd from "./Pages/Products/NewUpdateProd";
 import Add_Service from "./Pages/Service/Add_Service";
-import Dashboard from "./Components/Dashboard";
 import ViewSerivces from "./Tables/ViewSerivces";
 import UpdateService from "./Pages/Service/UpdateService";
 import Forgot from "./Components/Forgot";
-import Dashboard1 from "./Components/Dashboard/Dashboard";
 import MainDashboard from "./Components/Dashboard/MainDashboard";
 import Offer from "./Pages/User/Offer";
 
@@ -34,11 +32,9 @@ function App() {
         <Route path="/UpdateProducts" element={<UpdateProducts />} />
         <Route path="/NewUpdateProd" element={<NewUpdateProd />} />
         <Route path="/Add_Service" element={<Add_Service />} />
-        <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/ViewSerivces" element={<ViewSerivces />} />
         <Route path="/UpdateService" element={<UpdateService />} />
         <Route path="/Forgot" element={<Forgot />} />
-        <Route path="/Dashboard1" element={<Dashboard1 />} />
         <Route path="/MainDashboard" element={<MainDashboard />} />
         <Route path="/Offer" element={<Offer />} />
         </Routes>
