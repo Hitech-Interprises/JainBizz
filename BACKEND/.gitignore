@@ -3,3 +3,5 @@ env_jain/
 __pycache__/
 db.sqlite3
 __pycache__/
+
+envo/
