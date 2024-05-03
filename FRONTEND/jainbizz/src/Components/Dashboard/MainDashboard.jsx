@@ -143,7 +143,7 @@ const MainDashboard = () => {
                   </div>
                   <div>
                     <span className="block text-2xl font-bold">62</span>
-                    <span className="block text-gray-500">Products</span>
+                    <span className="block text-gray-500">Total Products</span>
                   </div>
                 </div>
                 <div className="flex items-center p-8 bg-white shadow rounded-lg">
@@ -165,7 +165,7 @@ const MainDashboard = () => {
                   </div>
                   <div>
                     <span className="block text-2xl font-bold">6.8</span>
-                    <span className="block text-gray-500">Sellers</span>
+                    <span className="block text-gray-500">Total Services</span>
                   </div>
                 </div>
                 <div className="flex items-center p-8 bg-white shadow rounded-lg">
@@ -191,7 +191,7 @@ const MainDashboard = () => {
                       (14%)
                     </span>
                     <span className="block text-gray-500">
-                      Leads
+                     Total Leads
                     </span>
                   </div>
                 </div>
