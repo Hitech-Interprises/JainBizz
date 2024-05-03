@@ -7,6 +7,9 @@ from django.utils import timezone
 
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
+import datetime
+import os
+from Storage.Formedia import *
 
 
 
@@ -24,6 +27,8 @@ class SignupModel(models.Model):
 
     def __str__(self):
         return str(self.fullname)
+
+
 
 
 class BussinessDetails_db(models.Model):
@@ -69,7 +74,7 @@ class BussinessDetails_db(models.Model):
 class CategoryModels(models.Model):
     cate_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False,primary_key=True) 
     name = models.CharField(max_length=256,unique=True,)
-    image = models.ImageField(upload_to='images/',blank=True, null=True)
+    image = models.ImageField(upload_to=filepathcat,blank=True, null=True)
     description = models.TextField()
     parent_category = models.ForeignKey('self', blank= True, null= True,related_name = "children_categories", on_delete= models.CASCADE, default=None, to_field='cate_id')
     parent_userid =  models.ForeignKey(SignupModel, on_delete=models.CASCADE, to_field='userid',default=0)
@@ -108,7 +113,7 @@ class Measurement_UnitsModels(models.Model):
 class CategoryService(models.Model):
     cate_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False,primary_key=True) 
     name = models.CharField(max_length=256,unique=True,)
-    image = models.ImageField(upload_to='images/',blank=True, null=True)
+    image = models.ImageField(upload_to=filepathcat,blank=True, null=True)
     description = models.TextField()
     parent_category = models.ForeignKey('self', blank= True, null= True,related_name = "children_categories", on_delete= models.CASCADE, default=None, to_field='cate_id')
     parent_userid =  models.ForeignKey(SignupModel, on_delete=models.CASCADE, to_field='userid',default=0)
@@ -129,8 +134,8 @@ class AllService_db(models.Model):
     service_type= models.CharField(max_length=80,blank= True, null= True)
     target_audience= models.CharField(max_length=80,blank= True, null= True)
     keywords_tags = models.CharField(max_length=80,blank= True, null= True)
-    images = models.ImageField(upload_to='images/',blank=True, null=True)
-    vedio = models.FileField(upload_to='videos/',blank=True, null=True)
+    images = models.ImageField(upload_to=filepathImg,blank=True, null=True)
+    vedio = models.FileField(upload_to=filepathVedio,blank=True, null=True)
     terms_conditions = models.TextField(blank= True, null= True)
     payment_opt = models.CharField(max_length=80,blank= True, null= True)
     discounts_promo = models.TextField(max_length=200,blank= True, null= True)
@@ -167,16 +172,16 @@ class AllProducts_db(models.Model):
     sku = models.CharField(max_length=56,blank= True, null= True,)
     categories = models.ForeignKey(CategoryModels,on_delete=models.CASCADE, to_field='cate_id')
     price = models.CharField(max_length=56)
-    images1 = models.ImageField(upload_to='images/',blank=True, null=True)
-    images2 = models.ImageField(upload_to='images/',blank=True, null=True)
-    images3 = models.ImageField(upload_to='images/',blank=True, null=True)
-    images4 = models.ImageField(upload_to='images/',blank=True, null=True)
-    images5 = models.ImageField(upload_to='images/',blank=True, null=True)
-    variants1 = models.ImageField(upload_to='images/',blank=True, null=True)
-    variants2 = models.ImageField(upload_to='images/',blank=True, null=True)
-    variants3 = models.ImageField(upload_to='images/',blank=True, null=True)
-    variants4 = models.ImageField(upload_to='images/',blank=True, null=True)
-    variants5 = models.ImageField(upload_to='images/',blank=True, null=True)
+    images1 = models.ImageField(upload_to=filepathImg,blank=True, null=True)
+    images2 = models.ImageField(upload_to=filepathImg,blank=True, null=True)
+    images3 = models.ImageField(upload_to=filepathImg,blank=True, null=True)
+    images4 = models.ImageField(upload_to=filepathImg,blank=True, null=True)
+    images5 = models.ImageField(upload_to=filepathImg,blank=True, null=True)
+    variants1 = models.ImageField(upload_to=filepathImg,blank=True, null=True)
+    variants2 = models.ImageField(upload_to=filepathImg,blank=True, null=True)
+    variants3 = models.ImageField(upload_to=filepathImg,blank=True, null=True)
+    variants4 = models.ImageField(upload_to=filepathImg,blank=True, null=True)
+    variants5 = models.ImageField(upload_to=filepathImg,blank=True, null=True)
     brand = models.CharField(max_length=56)
     specifications = models.TextField(blank= True, null= True,)
     reviews_ratings = models.CharField(max_length=56,blank= True, null= True,)
@@ -197,11 +202,11 @@ class AllProducts_db(models.Model):
 class Bussiness_Offering(models.Model):
 
     boffering_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False,primary_key=True) 
-    image1 = models.ImageField(upload_to='BOfferings/',blank=False, null=False,help_text="Required")
-    image2 = models.ImageField(upload_to='BOfferings/',blank=True, null=True)
-    image3 = models.ImageField(upload_to='BOfferings/',blank=True, null=True)
-    image4= models.ImageField(upload_to='BOfferings/',blank=True, null=True)
-    image5 = models.ImageField(upload_to='BOfferings/',blank=True, null=True)
+    image1 = models.ImageField(upload_to=file_Offering,blank=False, null=False,help_text="Required")
+    image2 = models.ImageField(upload_to=file_Offering,blank=True, null=True)
+    image3 = models.ImageField(upload_to=file_Offering,blank=True, null=True)
+    image4= models.ImageField(upload_to=file_Offering,blank=True, null=True)
+    image5 = models.ImageField(upload_to=file_Offering,blank=True, null=True)
     description1 = models.TextField(max_length=200, blank= False, null= False,help_text="Required")
     description2 = models.TextField(max_length=200,blank= True, null= True,)
     description3 = models.TextField(max_length=200,blank= True, null= True,)
