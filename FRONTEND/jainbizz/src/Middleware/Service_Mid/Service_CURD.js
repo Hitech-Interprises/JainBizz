@@ -18,7 +18,7 @@ const Service_CURD = () => {
 
     const getServiceList = async () => {
         try {
-          const res = await axios.post("http://127.0.0.1:8000/app/Service_List/", { userid: 'be5a6874-83f4-4c58-9c89-2b0918b3f874' });
+          const res = await axios.post("http://127.0.0.1:8000/app/Service_List/", { userid: 'bf986e4e-1d89-42ed-b49d-491ebbbcb4dc' });
           setData(res.data);
           console.log(res.data,"000000000006778")
         } catch (err) {
@@ -29,7 +29,7 @@ const Service_CURD = () => {
     const getService_Delete = async (service_id) => {
         try {
             const formData = new FormData();
-            formData.append('userid', 'be5a6874-83f4-4c58-9c89-2b0918b3f874');
+            formData.append('userid', 'bf986e4e-1d89-42ed-b49d-491ebbbcb4dc');
             formData.append('allservice_id', service_id);
     
             console.log(formData)

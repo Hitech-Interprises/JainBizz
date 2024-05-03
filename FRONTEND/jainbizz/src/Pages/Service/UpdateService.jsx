@@ -65,7 +65,7 @@ const UpdateService = () => {
 const ViewDetails = async () => {
   try {
     const formData = new FormData();
-    formData.append('userid', 'be5a6874-83f4-4c58-9c89-2b0918b3f874');
+    formData.append('userid', 'bf986e4e-1d89-42ed-b49d-491ebbbcb4dc');
     formData.append('service_id', service_id);
 
     const config = {
@@ -168,7 +168,7 @@ const ViewDetails = async () => {
 
   const getMainCategories = async () => {
     try {
-      const res = await axios.post("http://127.0.0.1:8000/app/ServiceViewList/", { userid: 'be5a6874-83f4-4c58-9c89-2b0918b3f874' });
+      const res = await axios.post("http://127.0.0.1:8000/app/ServiceViewList/", { userid: 'bf986e4e-1d89-42ed-b49d-491ebbbcb4dc' });
       setDatas(res.data);
     } catch (err) {
       console.log(err);

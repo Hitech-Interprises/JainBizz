@@ -169,14 +169,12 @@ const UpdateProducts = () => {
   return (
     <div class=''>
       <div class='flex bg-gray-200 '>
-        <div class=' bg-gray-50 border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700'>
+        <div class=' bg-gray-50 fixed border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700'>
           <Sidebar />
         </div>
-        <div class=' bg-gray-50  max-w-full'>
 
-        </div>
         <div className=''>
-          <div class="max-w-full w-[85vw] h-mx-auto sm:px-6 lg:px-8">
+          <div class="max-w-full  ml-64 w-[85vw] h-mx-auto sm:px-6 lg:px-8">
             <form>
 
               <div class='rounded bg-white mt-4'>

@@ -21,8 +21,8 @@ const Viewproducts = () => {
     const [oncancel, setoncancel] = useState(false);
     const [showTermsPopup, setShowTermsPopup] = useState(false);
     const [selectedProductId, setSelectedProductId] = useState(null);
-    const {data, setData,getProduct_Delete } = Product_CURD();
-    const {getProduct_View} = Product_Mid();
+    const { data, setData, getProduct_Delete } = Product_CURD();
+    const { getProduct_View } = Product_Mid();
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredData, setFilteredData] = useState([]);
 
@@ -38,13 +38,13 @@ const Viewproducts = () => {
     const handleSearch = () => {
         const lowercaseQuery = searchQuery.toLowerCase();
         const filtered = data.filter(item =>
-            
+
             item.product_name.toLowerCase().includes(lowercaseQuery) ||
             item.warranty_information.toLowerCase().includes(lowercaseQuery) ||
             item.sizes.toLowerCase().includes(lowercaseQuery) ||
             item.brand.toLowerCase().includes(lowercaseQuery) ||
             item.price.toLowerCase().includes(lowercaseQuery)
-            
+
         );
         setFilteredData(filtered);
     }
@@ -60,25 +60,25 @@ const Viewproducts = () => {
                     <Sidebar />
                 </div>
                 <div class=''>
-                <div className='flex ml-[18rem] mt-[7rem]'>
-                    <h1 class='font-serif'>View Products</h1>
-                </div>
-                    <div class='w-[95rem] mt-[2rem] ml-[18rem] border-4 rounded-lg h-[42rem] overflow-auto bg-white '>
-                    <div class="mb-2 flex flex-row gap-3">
-                        <div class="flex  ">
-                        <input type="text" placeholder="Search for the tool you like" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
-                        className="w-[80rem] ml-2.5 px-3 h-10 rounded-l border-2 border-yellow-300  focus:border-yellow-500" 
-                        />
-                        <button type="submit" class="bg-yellow-500 text-white rounded-r px-2 md:px-3 py-0 " onClick={handleSearch}>Search</button>
-                        </div>
-                        <select id="pricingType" name="pricingType"
-                            class="w-auto h-10 border-2 bg-yellow-500  focus:outline-none  text-white rounded px-2 md:px-3 py-0 md:py-1 tracking-wider">
-                            <option value="All" selected=""><b>All</b></option>
-                            <option value="Freemium">Freemium</option>
-                            <option value="Free">Free</option>
-                            <option value="Paid">Paid</option>
-                        </select>
+                    <div className='flex ml-[18rem] mt-[7rem]'>
+                        <h1 class='font-serif'>View Products</h1>
                     </div>
+                    <div class='w-[95rem] mt-[2rem] ml-[18rem] border-4 rounded-lg h-[42rem] overflow-auto bg-white '>
+                        <div class="mb-2  mt-2 flex flex-row gap-3">
+                            <div class="flex ">
+                                <input type="text" placeholder="Search for the tool you like" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
+                                    className="w-[80rem] ml-2.5 px-3 h-10 rounded-l border-2 border-yellow-300  focus:border-yellow-500"
+                                />
+                                <button type="submit" class="bg-yellow-500 text-white rounded-r px-2 md:px-3 py-0 " onClick={handleSearch}>Search</button>
+                            </div>
+                            <select id="pricingType" name="pricingType"
+                                class="w-auto h-10 border-2 bg-yellow-500  focus:outline-none  text-white rounded px-2 md:px-3 py-0 md:py-1 tracking-wider">
+                                <option value="All" selected=""><b>All</b></option>
+                                <option value="Freemium">Freemium</option>
+                                <option value="Free">Free</option>
+                                <option value="Paid">Paid</option>
+                            </select>
+                        </div>
                         <div class='bg-white '>
                             <table class="min-w-full divide-y divide-gray-200 font-serif ">
                                 <thead class="bg-yellow-50 font-sans">
@@ -118,10 +118,10 @@ const Viewproducts = () => {
                                                         <img class="h-10 w-10 rounded-full" src={item.images1} alt="/Backend/images" />
                                                     </div> */}
                                                     <div class="flex items-center justify-center w-8 h-8 text-blue-500 bg-blue-100 rounded-full dark:bg-gray-800">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                                                </svg>
-                                            </div>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                                                        </svg>
+                                                    </div>
                                                 </div>
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap">
@@ -161,7 +161,7 @@ const Viewproducts = () => {
                     </div>
                 </div>
             </div>
-            <ToastContainer/>
+            <ToastContainer />
         </div>
     )
 }

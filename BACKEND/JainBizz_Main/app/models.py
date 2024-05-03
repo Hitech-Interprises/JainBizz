@@ -118,7 +118,7 @@ class CategoryService(models.Model):
 
 
     def __str__(self):
-        return f"{self.cate_id} - {self.name}"
+        return f"{self.name} - {self.cate_id}"
 
 
     

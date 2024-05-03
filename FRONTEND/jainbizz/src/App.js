@@ -17,6 +17,7 @@ import Forgot from "./Components/Forgot";
 import MainDashboard from "./Components/Dashboard/MainDashboard";
 import Offer from "./Pages/User/Offer";
 import Line from "./Components/Chart";
+import BuyerDashboard from "./Components/Dashboard/BuyerDashbord";
 
 
 
@@ -40,6 +41,7 @@ function App() {
         <Route path="/MainDashboard" element={<MainDashboard />} />
         <Route path="/Offer" element={<Offer />} />
         <Route path="/Line" element={<Line />} />
+        <Route path="/BuyerDashboard" element={<BuyerDashboard />} />
         </Routes>
     </BrowserRouter>  
   );
