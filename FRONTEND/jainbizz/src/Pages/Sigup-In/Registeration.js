@@ -17,7 +17,7 @@ const Registeration = () => {
     // const [ShowTerms, setShowTerms] = useState(false)
     const [otpModelOpen, setOtpModelOpen] = useState(false)
     const [showTermsPopup, setShowTermsPopup] = useState(false);
-    const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
+    const [isCheckboxChecked, setIsCheckboxChecked] = useState(true);
     const { handlechange, handlesubmit, errorMessage, formError, values, frontresp, setfrontresp, password, setPassword } = Signup(Validation);
     const [getLogInOpen, setgetLogInOpen] = useState(false)
     const [passwordVisible, setPasswordVisible] = useState(false);

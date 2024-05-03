@@ -28,7 +28,7 @@ class SignupModel(models.Model):
 
 class BussinessDetails_db(models.Model):
     details_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False,primary_key=True)  
-    parent_userid =  models.ForeignKey(SignupModel, on_delete=models.CASCADE, to_field='userid', default='be5a6874-83f4-4c58-9c89-2b0918b3f874') #---USERID
+    parent_userid =  models.ForeignKey(SignupModel, on_delete=models.CASCADE, to_field='userid', default='bf986e4e-1d89-42ed-b49d-491ebbbcb4dc') #---USERID
     gst_check = models.BooleanField(default=1, blank= False, null=False, help_text="Required")
     fssai_check = models.BooleanField(default=1, blank= False, null=False, help_text="Required")
     iec_check = models.BooleanField(default=1, blank= False, null=False, help_text="Required")
@@ -212,9 +212,6 @@ class Bussiness_Offering(models.Model):
     categories3 = models.CharField(max_length=20, blank= True, null= True,)
     categories4 = models.CharField(max_length=20, blank= True, null= True,)
     categories5 = models.CharField(max_length=20, blank= True, null= True,)
-    parent_userid =  models.ForeignKey(SignupModel, on_delete=models.CASCADE, to_field='userid',  default='be5a6874-83f4-4c58-9c89-2b0918b3f874')
+    parent_userid =  models.ForeignKey(SignupModel, on_delete=models.CASCADE, to_field='userid',  default='bf986e4e-1d89-42ed-b49d-491ebbbcb4dc')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
-
-
-    

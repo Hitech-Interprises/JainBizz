@@ -146,7 +146,7 @@ class Buissness_DetailsSerializer(serializers.ModelSerializer):
 
         # if not bussiness_name :
         #     raise serializers.ValidationError('Its Compulsary To fill bussiness_name')
-        # return attrs
+        return attrs
 
     def create(self, validated_data):
         return BussinessDetails_db.objects.create(**validated_data)

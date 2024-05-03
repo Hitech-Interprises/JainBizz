@@ -16,7 +16,8 @@ import UpdateService from "./Pages/Service/UpdateService";
 import Forgot from "./Components/Forgot";
 import MainDashboard from "./Components/Dashboard/MainDashboard";
 import Offer from "./Pages/User/Offer";
-import Chart from "./Components/Chart";
+import Line from "./Components/Chart";
+
 
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
         <Route path="/Forgot" element={<Forgot />} />
         <Route path="/MainDashboard" element={<MainDashboard />} />
         <Route path="/Offer" element={<Offer />} />
-        <Route path="/Chart" element={<Chart />} />
+        <Route path="/Line" element={<Line />} />
         </Routes>
     </BrowserRouter>  
   );

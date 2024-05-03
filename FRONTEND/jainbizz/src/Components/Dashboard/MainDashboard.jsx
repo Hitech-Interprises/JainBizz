@@ -16,10 +16,6 @@ const MainDashboard = () => {
     { name: 'Jul', uv: 3490, pv: 4300, amt: 2100 },
   ];
 
-
-
-
-
   return (
     <div className="flex-grow text-gray-800">
       <header className="flex items-center h-20 px-6 sm:px-10 bg-yellow-300">

@@ -64,15 +64,6 @@ const Offer = () => {
                     <div class="bg-gray-900 py-16 h-screen">
                         <div class="container-fluid mx-auto px-4">
                             <h2 class="text-3xl font-bold text-white mb-8">Post Your Latest Product</h2>
-                            {/* <div class="mb-2">
-                        <label for="measurement_units" class="block text-white font-medium mb-2">Select here</label>
-                        <select id="measurement_units" name="measurement_units"
-                            class="border border-gray-400 bg-white p-2 w-full rounded-lg outline-none  focus:outline-yellow-500 focus:border-blue-400 mb-2"  >
-                            <option value="">Select Here</option>
-                            <option value="products">Products</option>
-                            <option value="service">Service</option>
-                        </select>
-                    </div> */}
                             <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
                                 <div class="bg-white rounded-lg shadow-lg p-3">
                                     <div class="relative overflow-hidden">
