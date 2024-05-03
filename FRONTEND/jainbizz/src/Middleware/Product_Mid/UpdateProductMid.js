@@ -22,7 +22,7 @@ const UpdateProductMid = () => {
     const ViewDetails = async (allproduct_id) => {
       try {
         const formData = new FormData();
-        formData.append('userid', 'be5a6874-83f4-4c58-9c89-2b0918b3f874');
+        formData.append('userid', 'bf986e4e-1d89-42ed-b49d-491ebbbcb4dc');
         formData.append('allproduct_id', allproduct_id);
     
         const config = {

@@ -13,6 +13,10 @@ const Sidebar = () => {
 
     const handleToggleChange = () => {
       setIsSeller(!isSeller);
+
+      if (!isSeller){
+        navigate('/MainDashboard')
+      }
     };
 
     // const menuItem = [
