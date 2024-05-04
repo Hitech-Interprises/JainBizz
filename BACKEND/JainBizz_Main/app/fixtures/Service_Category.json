@@ -1,0 +1,48 @@
+[
+    
+    {
+        "model":"app.CategoryService",
+        "pk": 1,
+            "fields": {
+                "name": "Beauty & Personal Care",
+                "image": null,
+                "description": "Description for Category 1",
+                "parent_category": 1,
+                "parent_userid": "919fc9a7-068d-4374-8ad6-efc6f9d2c017",
+                "created_at": "2024-05-03T12:00:00Z",
+                "updated_at": "2024-05-03T12:00:00Z"
+            }
+    },
+    
+    {
+        "model": "app.CategoryService",
+        "pk": 2,
+        "fields": {
+            "name": "Business & Finance",
+            "image": null,
+            "description": "Description for Category 2",
+            "parent_category": 1,
+            "parent_userid": "919fc9a7-068d-4374-8ad6-efc6f9d2c017",
+            "created_at": "2024-05-03T12:00:00Z",
+            "updated_at": "2024-05-03T12:00:00Z"
+        }
+    },
+
+
+    {
+        "model": "app.CategoryService",
+        "pk": 2,
+        "fields": {
+            "name": "Cleaning & Maintenance",
+            "image": null,
+            "description": "Description for Category 2",
+            "parent_category": 1,
+            "parent_userid": "919fc9a7-068d-4374-8ad6-efc6f9d2c017",
+            "created_at": "2024-05-03T12:00:00Z",
+            "updated_at": "2024-05-03T12:00:00Z"
+        }
+    }
+    
+    
+
+]

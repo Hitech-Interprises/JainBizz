@@ -98,7 +98,7 @@ WSGI_APPLICATION = 'JainBizz_Main.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Jainbizz_DB',
+        'NAME': 'Jainbizz_Database2',
         'USER': 'postgres',
         'PASSWORD': '12345678',
         'HOST': 'localhost',
